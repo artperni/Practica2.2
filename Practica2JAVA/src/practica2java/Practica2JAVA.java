@@ -11,9 +11,6 @@ package practica2java;
  */
 public class Practica2JAVA {
 
-    /**test
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
     }
