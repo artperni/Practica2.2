@@ -157,7 +157,8 @@ public class ArbolBusquedaBinaria {
     }
     
     public Dato findMin(){
-        return findMin(raiz).getValor();
+        Nodo minimo = raiz;
+        return findMin(raiz,minimo).getValor();
     }
     
 
@@ -185,7 +186,8 @@ public class ArbolBusquedaBinaria {
     }
     
     public Dato findMax(){
-        return findMax(raiz).getValor();
+        Nodo maximo = raiz;
+        return findMin(raiz,maximo).getValor();
     }
     
     //ELIMINAR UNA PELICULA
