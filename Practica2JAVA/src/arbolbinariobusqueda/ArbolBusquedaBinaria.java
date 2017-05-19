@@ -142,20 +142,18 @@ public class ArbolBusquedaBinaria {
     el árbol hasta encontrarlo. Podemos elegir recorrerlo en Pre, Post o In
     Order.
     */
-    Nodo nodoTemporal = null;
-    private Nodo findMin(Nodo raiz){
+    
+    private Nodo findMin(Nodo raiz, Nodo minimo){
+        
+        if(raiz.getValor().getCoste()<minimo.getValor().getCoste())
+            minimo = raiz;
+        if(raiz.getHojaIzquierda()!=null)
+            findMin(raiz.getHojaIzquierda(),minimo);
+        
+        if(raiz.getHojaDerecha()!=null)
+            findMin(raiz.getHojaDerecha(),minimo);
          
-        if (raiz != null ){
-            if (nodoTemporal == null){
-                nodoTemporal = raiz;
-            } else if (nodoTemporal.getValor().getCoste() > raiz.getValor().getCoste()) {
-                nodoTemporal = raiz;
-            }
-            findMin(raiz.getHojaIzquierda());
-            findMin(raiz.getHojaDerecha());
-        }
-
-        return nodoTemporal;
+         return minimo;
     }
     
     public Dato findMin(){
@@ -173,19 +171,17 @@ public class ArbolBusquedaBinaria {
     el árbol hasta encontrarlo. Podemos elegir recorrerlo en Pre, Post o In
     Order.
     */
-    private Nodo findMax(Nodo raiz){
-        if (raiz != null ){
-            if (nodoTemporal == null) {
-                nodoTemporal = raiz;
-                
-            }else if (nodoTemporal.getValor().getCoste()<raiz.getValor().getCoste()){
-                nodoTemporal = raiz;
-            }
-            findMax(raiz.getHojaIzquierda());
-            findMax(raiz.getHojaDerecha());
-        }
+    private Nodo findMax(Nodo raiz, Nodo maximo){
         
-        return nodoTemporal;
+        if(raiz.getValor().getCoste()>maximo.getValor().getCoste())
+            maximo = raiz;
+        if(raiz.getHojaIzquierda()!=null)
+            findMin(raiz.getHojaIzquierda(),maximo);
+        
+        if(raiz.getHojaDerecha()!=null)
+            findMin(raiz.getHojaDerecha(),maximo);
+         
+         return maximo;
     }
     
     public Dato findMax(){
