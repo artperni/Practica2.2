@@ -148,10 +148,10 @@ public class ArbolBusquedaBinaria {
         if(raiz.getValor().getCoste()<minimo.getValor().getCoste())
             minimo = raiz;
         if(raiz.getHojaIzquierda()!=null)
-            findMin(raiz.getHojaIzquierda(),minimo);
+            minimo=findMin(raiz.getHojaIzquierda(),minimo);
         
         if(raiz.getHojaDerecha()!=null)
-            findMin(raiz.getHojaDerecha(),minimo);
+            minimo=findMin(raiz.getHojaDerecha(),minimo);
          
          return minimo;
     }
@@ -177,10 +177,10 @@ public class ArbolBusquedaBinaria {
         if(raiz.getValor().getCoste()>maximo.getValor().getCoste())
             maximo = raiz;
         if(raiz.getHojaIzquierda()!=null)
-            findMin(raiz.getHojaIzquierda(),maximo);
+            maximo=findMin(raiz.getHojaIzquierda(),maximo);
         
         if(raiz.getHojaDerecha()!=null)
-            findMin(raiz.getHojaDerecha(),maximo);
+            maximo=findMin(raiz.getHojaDerecha(),maximo);
          
          return maximo;
     }
